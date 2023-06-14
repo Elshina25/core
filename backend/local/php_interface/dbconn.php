@@ -2,8 +2,8 @@
 define("DBPersistent", false);
 $DBType = "mysql";
 $DBHost = "localhost";
-$DBLogin = "bitrix0";
-$DBPassword = "i%XVoLh+i[lU{nl2]LE3";
+$DBLogin = "";
+$DBPassword = "";
 $DBName = "sitemanager";
 
 $DBDebug = false;
