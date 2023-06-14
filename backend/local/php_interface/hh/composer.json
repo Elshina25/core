@@ -1,0 +1,5 @@
+{
+    "require": {
+        "seregazhuk/headhunter-api": "^0.3.1"
+    }
+}

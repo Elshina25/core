@@ -1,0 +1,24 @@
+.favorite-group {
+  @apply flex items-center cursor-pointer;
+
+  &:hover &__icon {
+    @apply fill-green stroke-green;
+  }
+
+  &:hover &__label {
+    @apply text-green border-green;
+  }
+
+  &__icon {
+    @apply mr-4 md:mr-8 2xl:mr-12 mobile:h-16 mobile:w-16;
+  }
+
+  &--collapsed {
+    .favorite-group__label {
+      @apply hidden;
+    }
+    .favorite-group__icon {
+      @apply mr-0 hover:fill-white hover:stroke-white fill-white stroke-white;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.person {
+  @apply mobile:flex mobile:gap-20 lg:w-[clamp(29%,30%,390px)];
+
+  @screen md-only {
+    @apply min-h-[358px] w-[calc(50%-10px)] text-white relative rounded-b;
+    background: linear-gradient(
+      358.76deg,
+      #000000 0.94%,
+      rgba(0, 0, 0, 0.13) 35.79%,
+      rgba(0, 0, 0, 0) 45.25%
+    );
+  }
+
+  &__image {
+    @apply mobile:mb-0 mb-20 md-only:absolute z-[-1] rounded lg:rounded-[40px]
+    mobile:h-[134px] w-full md:h-[358px] lg:h-auto lg-only:aspect-square xl:max-h-[365px] object-cover object-top;
+  }
+
+  &__info {
+    @screen mobile {
+      @apply flex flex-col justify-between;
+    }
+
+    @screen md-only {
+      @apply mt-[245px] ml-16;
+    }
+
+    &-contacts {
+      @apply hidden lg:block mt-20;
+    }
+
+    &-title {
+      @apply md-only:t-h3 mb-4 md:mb-8 lg:mb-10;
+    }
+
+    &-job {
+      @apply t-p3 mb-14 md:mb-12 lg:t-p2;
+    }
+
+    &-links {
+      @apply flex flex-col lg:hidden gap-6 md:gap-16 lg:gap-10 md:mt-12 md-only:flex-row whitespace-nowrap;
+
+      a {
+        @apply t-p3 max-w-max lg:t-p2;
+      }
+    }
+  }
+}

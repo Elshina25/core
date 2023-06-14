@@ -1,0 +1,37 @@
+@layer components {
+  :root {
+    --filter-collapse-h: 168px;
+    --filter-collapse-h-md: 76px;
+    --filter-collapse-h-xl: 82px;
+  }
+
+  .filter-element,
+  .filter-label {
+    @apply t-p2;
+  }
+
+  .filter-element {
+    @apply transition-borders;
+
+    &--border {
+      @apply border border-auxiliary-6/50 rounded;
+    }
+
+    &:focus-within,
+    &:hover {
+      @apply border-green;
+    }
+
+    input {
+      @apply outline-none border-none;
+
+      &::placeholder {
+        @apply opacity-30;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.filter-btn {
+  @apply t-button cursor-pointer transition;
+
+  &--disabled {
+    @apply opacity-40 pointer-events-none;
+  }
+
+  &--green,
+  &--grey {
+    @apply mobile:w-full px-22 py-[15px] md:px-28 md:py-16 xl:py-18
+      text-center border rounded hover:bg-white;
+  }
+
+  &--green {
+    @apply bg-green text-white border-green hover:text-green;
+  }
+
+  &--grey {
+    @apply bg-auxiliary-6/50 border-auxiliary-6/50 active:bg-auxiliary-6;
+  }
+
+  &--link {
+    @apply t-p2 hover:text-green;
+
+    &:hover span {
+      @apply border-green border-opacity-100;
+    }
+
+    span {
+      @apply border-b border-dashed border-black/50;
+    }
+  }
+}

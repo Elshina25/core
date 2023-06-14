@@ -1,0 +1,47 @@
+.person {
+  @apply flex gap-16 xl:gap-20;
+
+  &__photo {
+    @apply flex-none rounded object-cover object-top w-80 h-80 md:w-100 md:h-100 bg-auxiliary-6/50;
+  }
+
+  &__name {
+    @apply t-h4;
+  }
+
+  &__position {
+    @apply t-p3 md:t-p2 mt-6 xl:mt-10;
+  }
+
+  &__contacts {
+    @apply mt-8 md:mt-16 xl:mt-12;
+  }
+}
+
+/*
+ * Для страницы исследования
+ * @props variant=research
+*/
+.person-research {
+  @apply flex-col xl:flex-row;
+}
+
+/*
+ * Для страницы завершенных проектов
+ * @props variant=project
+*/
+.person-project {
+  @apply flex-row md-only:flex-col lg-only:flex-col;
+}
+
+/*
+ * Для страницы истории сотрудников
+ * @props variant=story
+*/
+.person-story {
+  @apply flex-col md-only:flex-row;
+}
+
+.person-vacancy {
+  @apply flex-col md:flex-row gap-10 md:gap-20;
+}

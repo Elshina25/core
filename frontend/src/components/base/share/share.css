@@ -1,0 +1,23 @@
+.share-trigger {
+  @apply flex gap-10 items-center cursor-pointer;
+
+  &:hover svg {
+    @apply fill-green;
+  }
+
+  &:hover span {
+    @apply text-green border-green;
+  }
+
+  &__label {
+    @apply t-p3 hidden xl:block pb-1;
+  }
+}
+
+.share-link {
+  @apply relative flex items-center pl-42 border-none mb-0 mobile:mr-22 mobile:mb-10;
+
+  &:not(:last-child) {
+    @apply md:mb-32;
+  }
+}

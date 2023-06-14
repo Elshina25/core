@@ -1,0 +1,21 @@
+.breadcrumb-item {
+  @apply relative t-breadcrumb mr-6;
+
+  svg {
+    @apply fill-black/50 inline ml-6;
+  }
+
+  span {
+    &:not(.link) {
+      @apply opacity-50;
+    }
+
+    &.link {
+      @apply opacity-50 hover:opacity-100;
+    }
+  }
+
+  &:last-child > svg {
+    @apply hidden;
+  }
+}

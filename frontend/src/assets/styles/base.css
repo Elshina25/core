@@ -1,0 +1,48 @@
+@import 'tailwindcss/base.css';
+@import './typography/text.css';
+@import './typography/links.css';
+
+@layer base {
+  :root {
+    --container-padding: theme(container.padding.DEFAULT);
+    --container-padding-md: theme(container.padding.md);
+    --container-padding-lg: theme(container.padding.lg);
+    --container-padding-xl: theme(container.padding.xl);
+    --container-padding-2xl: calc(
+      (100% - theme(screens.2xl)) / 2 + theme(container.padding.2xl)
+    );
+  }
+
+  html {
+    @apply antialiased text-black t-p3;
+  }
+
+  body {
+    @apply bg-[#F3F3F3];
+    font-variant-numeric: lining-nums;
+
+    &.scroll-lock {
+      @apply overflow-hidden;
+    }
+  }
+
+  main {
+    /* 100vh - высота шапки - высота футера - внешний отступ футера */
+    --min-h-md: calc(
+      100vh - var(--h-header-md) - var(--h-footer-md) - var(--mt-footer)
+    );
+    --min-h-xl: calc(
+      100vh - var(--h-header-xl) - var(--h-footer-xl) - var(--mt-footer)
+    );
+
+    @apply md:min-h-[var(--min-h-md)] 2xl:min-h-[var(--min-h-xl)];
+  }
+
+  .animated,
+  .btn,
+  .collapsing,
+  a,
+  .link {
+    @apply transition;
+  }
+}

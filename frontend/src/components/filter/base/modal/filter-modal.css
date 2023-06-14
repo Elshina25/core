@@ -1,0 +1,76 @@
+.modal {
+  @apply fixed inset-0 flex items-start justify-center z-[100] transition;
+  @apply py-16 px-16;
+
+  &--centered {
+    @apply items-center;
+  }
+
+  &--fill {
+    @screen mobile {
+      @apply !p-0 top-[var(--h-header)];
+    }
+
+    .modal-content {
+      @apply w-full mobile:h-full mobile:rounded-none;
+    }
+
+    .modal-overflow {
+      @apply mobile:hidden;
+    }
+
+    .close {
+      @apply mobile:hidden;
+    }
+  }
+
+  &-content {
+    @apply relative max-h-full bg-white overflow-auto rounded z-[102];
+    @apply mobile:px-16 p-40;
+
+    .close {
+      @apply absolute text-black hover:text-green cursor-pointer transition
+        top-16 right-16
+        md:top-20 md:right-20
+        xl:top-20 xl:right-20
+        z-[inherit];
+    }
+  }
+
+  &-overflow {
+    @apply fixed inset-0 bg-black/30 z-[101];
+  }
+
+  &--container {
+    @apply px-[theme(container.padding.DEFAULT)]
+      md:px-[theme(container.padding.md)]
+      lg:px-[theme(container.padding.lg)]
+      xl:px-[theme(container.padding.xl)]
+      2xl:px-[theme(container.padding.2xl)];
+
+    .modal-content {
+      --max-width-md: calc(theme(screens.md) - theme(container.padding.md) * 2);
+      --max-width-lg: calc(theme(screens.lg) - theme(container.padding.lg) * 2);
+      --max-width-xl: calc(theme(screens.xl) - theme(container.padding.xl) * 2);
+      --max-width-2xl: calc(
+        theme(screens.2xl) - theme(container.padding.2xl) * 2
+      );
+
+      @apply p-0
+        md:max-w-[var(--max-width-md)] 
+        lg:max-w-[var(--max-width-lg)]
+        xl:max-w-[var(--max-width-xl)]
+        2xl:max-w-[var(--max-width-2xl)];
+    }
+  }
+
+  &--background {
+    .modal-content {
+      @apply p-0;
+
+      .close {
+        @apply text-white hover:text-auxiliary-2;
+      }
+    }
+  }
+}

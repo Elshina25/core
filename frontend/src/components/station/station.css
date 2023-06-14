@@ -1,0 +1,17 @@
+.station {
+  @apply flex items-center gap-10;
+
+  &-icon {
+    --station-color: #fff;
+
+    @apply w-16 h-16 2xl:w-20 2xl:h-20 fill-[var(--station-color)];
+
+    :deep(path) {
+      @apply !fill-white;
+    }
+  }
+
+  &-description {
+    @apply t-p2 whitespace-nowrap text-black;
+  }
+}

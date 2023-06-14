@@ -1,0 +1,3 @@
+.share-group {
+  @apply w-full flex justify-between mobile:items-center mt-28 md:mt-44 2xl:mt-[74px];
+}

@@ -1,0 +1,16 @@
+.loader {
+  @apply absolute top-0 bottom-0 left-0 right-0 z-50 opacity-70 transition rounded;
+  background: linear-gradient(90deg, #f3f3f3 25%, #ddd, #f3f3f3 75%);
+  background-size: 400% 100%;
+  animation: loading 2s ease-in-out infinite;
+
+  @keyframes loading {
+    0% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0 50%;
+    }
+  }
+}

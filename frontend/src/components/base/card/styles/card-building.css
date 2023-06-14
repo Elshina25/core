@@ -1,0 +1,85 @@
+.card {
+  @apply relative bg-white rounded;
+
+  &--default {
+    @apply h-full w-full md:w-[clamp(358px,50vw,100%)] lg:w-[clamp(50%,50vw,100%)] xl:w-[clamp(30%,30vw,420px)] 2xl:w-[420px] flex flex-col;
+
+    .card-body {
+      @apply flex-1;
+    }
+  }
+
+  &--large {
+    @screen md-only {
+      @apply flex items-start;
+    }
+
+    .card__preview img {
+      @screen md-only {
+        @apply h-[450px] w-[378px] rounded-r-none rounded-l;
+      }
+    }
+
+    .card-body {
+      @apply md-only:flex-1 xl:flex-row xl:gap-54 xl:pr-72;
+
+      &__head {
+        @apply md:mb-24 xl:mb-12;
+      }
+
+      &__tags {
+        @apply max-w-full w-full xl:flex;
+      }
+
+      &__name {
+        @apply md:t-h3 xl:t-h2;
+      }
+
+      &__caption {
+        @apply xl:hidden;
+      }
+
+      &__address {
+        @apply xl:mt-12;
+      }
+
+      &__info {
+        @apply w-full;
+      }
+
+      .offers {
+        @apply md:mb-16 xl:mb-18;
+      }
+    }
+  }
+
+  &__preview {
+    img {
+      @apply w-full h-[200px] md:h-240 xl:h-[280px] object-cover rounded-t;
+    }
+  }
+
+  &-body {
+    @apply flex flex-col justify-between p-16 xl:p-30;
+
+    &__head {
+      @apply flex flex-wrap items-center justify-between mb-10 md:mb-12;
+    }
+
+    &__caption {
+      @apply t-tag text-auxiliary-5;
+    }
+
+    &__name {
+      @apply w-fit t-h3;
+    }
+
+    &__address {
+      @apply t-p3 mt-12 xl:mt-16 mb-16 md:mb-8 xl:mb-12;
+    }
+
+    &__offers {
+      @apply w-fit !inline;
+    }
+  }
+}

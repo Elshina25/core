@@ -1,0 +1,17 @@
+.popover {
+  &__trigger:hover ~ &__wrapper {
+    @apply md:!block;
+  }
+
+  &__wrapper {
+    @apply md:hover:!block md:hidden absolute z-10 pt-16;
+
+    @screen mobile {
+      @apply fixed bottom-0 left-0 w-full;
+    }
+  }
+
+  &__body {
+    @apply rounded px-16 py-20 bg-white;
+  }
+}

@@ -1,0 +1,125 @@
+# Исключаем настройки PHPStorm, мы в нём работаем
+/.idea/
+
+# Исключаем папку /bitrix кроме некоторых подпапок
+/bitrix/*
+
+# исключаем логи
+/local/php_interface/log/*
+/local/logs/
+
+# исключаем загружаемые файлы
+/upload/
+
+# различные системные папки и файлы хостингов и операционных систем
+/cgi-bin/
+/awstats/
+/webstat/
+.DS_Store
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# исключаем все текстовые и подобные ресурсы (на нашей практике они всегда излишни)
+*.xml
+*.html
+*.txt
+*.log
+*.css.map
+
+# архивы, включая многотомные
+*.zip
+*.zip*
+*.tar
+*.tar*
+*.enc
+*.enc*
+*.gz
+*.gz*
+*.tgz
+*.tgz*
+*.sql
+*.rar
+.hg
+.ftpconfig
+*.doc
+*.docx
+*.pdf
+*.rtf
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.psd
+*.psb
+*.sketch
+core.*
+
+# однако храним robots.txt — он нужен
+!/robots.txt
+
+# composer
+composer.phar
+/vendor/
+
+# исключаем всякое от node.js
+node_modules
+bower_components
+.grunt
+.npm
+.env
+
+# и логи xhprof напоследок
+/xhprof/logs
+
+# ‹ишнее с прода
+/sitemap/
+.access.php
+.htaccess.restore
+.section.php
+.top.menu.php
+404_error.php
+49f2b943220583d126a7bec79fdaa82c.php
+__adminer.php__
+/_parsers/
+analytics.php
+/archive/
+auth.php
+cbre.yrl1
+contacts.inc.php
+/css/
+/desktop_app/
+domain-name.csr
+download.php
+gr-ENG.jpg
+gr-RUS.jpg
+/includes/
+/js/
+log.test
+mail.php
+mailtest.php
+/test/
+/news/
+phpinfo.php
+privacy-policy/
+retries.php
+sect_inc.php
+share_list.php
+storage.php
+test_db_connection.php
+test_img.php
+test_inc.php
+test_page.php
+test_research.php
+testwm.jpg
+urlrewrite.php
+usertest.php
+varvara.php
+varvara2.php
+/video/
+web.config
+/x-files/
+/local/php_interface/log/errorCrm.txt
+/local/php_interface/log/successCrm.txt
+/property/

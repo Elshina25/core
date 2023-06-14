@@ -1,0 +1,45 @@
+.select-group {
+  &__caret {
+    @apply absolute right-0 top-0 bottom-0 h-16 w-16 m-auto;
+  }
+
+  :deep() {
+    .multiselect {
+      @apply w-fit min-h-fit;
+
+      &__tags,
+      &__single {
+        @apply bg-transparent border-0 m-0 min-h-fit;
+      }
+
+      &__tags {
+        @apply p-0;
+      }
+
+      &__single {
+        @apply t-p2 md:t-p3 max-w-[300px] whitespace-nowrap overflow-hidden text-ellipsis
+          pl-0 pr-26 cursor-pointer;
+      }
+
+      &__content-wrapper {
+        @apply w-fit max-w-[300px] border-0 rounded mt-16;
+      }
+
+      &__option {
+        @apply t-p2 md:t-p3 px-16 py-12;
+
+        &:hover {
+          @apply bg-auxiliary-6/50;
+        }
+
+        &--highlight {
+          @apply text-black bg-white;
+        }
+
+        &--selected {
+          @apply hidden;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.collapse {
+  @apply py-20 px-16 xl:py-40 xl:px-40 min-h-[88px] 
+    xl:min-h-[160px] bg-[#E5EBED] rounded;
+
+  &:not(&--active) {
+    @apply flex flex-col justify-center;
+  }
+
+  &__arrow {
+    @apply absolute right-0 top-0 bottom-0 m-auto w-24 h-24 xl:w-34 xl:h-34 transition-all;
+
+    &--active {
+      @apply rotate-180;
+    }
+  }
+
+  &__head {
+    @apply flex items-center relative t-h3 pr-60 break-words min-h-[48px] xl:min-h-[80px];
+  }
+
+  &__content {
+    @apply t-p3 max-h-0 overflow-hidden transition-all;
+
+    &--active {
+      @apply max-h-[200px] overflow-auto mt-12;
+    }
+  }
+}

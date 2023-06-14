@@ -1,0 +1,7 @@
+.filter-element {
+  @apply h-52 md:h-54 xl:h-64 flex items-center w-fit;
+
+  input {
+    @apply px-18 md:px-20 py-14 xl:py-[17px] rounded;
+  }
+}

@@ -1,0 +1,14 @@
+@import 'tailwindcss/components.css';
+@import 'components/form.css';
+@import 'components/filters.css';
+
+@layer components {
+  .container {
+    @apply w-full max-w-screen-2xl;
+
+    @media screen and (min-width: 1320px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+}

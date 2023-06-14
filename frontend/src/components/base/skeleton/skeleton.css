@@ -1,0 +1,29 @@
+.skeleton {
+  @apply inline-flex flex-col align-middle w-full;
+
+  &-item {
+    @apply w-full h-full;
+    background: linear-gradient(90deg, #dbdbdb 25%, #f3f3f3, #dbdbdb 75%);
+    background-size: 400% 100%;
+
+    &:after {
+      content: '\A0';
+    }
+  }
+
+  &.is-animated {
+    .skeleton-item {
+      animation: skeleton-item 2s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes skeleton-item {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}

@@ -1,0 +1,39 @@
+.checkbox-group {
+  @apply t-p2 relative w-fit flex items-center bg-white 
+    cursor-pointer select-none transition;
+
+  &--default:hover &__checkmark {
+    @apply border-green;
+  }
+
+  &--inline {
+    @apply relative w-full pl-56 pt-12 pb-16 pr-16;
+  }
+
+  &--inline&--checked {
+    @apply bg-auxiliary-6/50;
+
+    &::after {
+      @apply content-[url('@/assets/icons/ui/check-large.svg')]
+        absolute top-0 bottom-0 right-20 m-auto h-24 w-24;
+    }
+  }
+
+  &--button {
+    @apply px-[17px] pt-14 pb-[15px] md:pt-16 md:px-20 xl:pt-18 xl:pb-16 
+      rounded border border-auxiliary-6/50 hover:!border-auxiliary-6 hover:z-10;
+  }
+
+  &--button&--checked {
+    @apply bg-auxiliary-6/50 border-transparent;
+  }
+
+  &--button &__checkmark {
+    @apply hidden;
+  }
+
+  &__checkmark {
+    @apply relative mr-8 md:mr-12 flex items-center justify-center min-w-[20px] min-h-[22px] w-20 h-20 
+      md:min-w-[22px] md:min-h-[22px] md:w-22 md:h-22 border border-black rounded-[4px] text-black;
+  }
+}

@@ -1,0 +1,41 @@
+.dropdown {
+  @apply relative overflow-visible;
+
+  &--dark {
+    .dropdown__trigger {
+      @apply h-54 md:h-40 2xl:h-60 bg-black text-white !px-0 w-full justify-center;
+
+      &:hover {
+        @apply text-black bg-white border-black;
+      }
+
+      &:focus {
+        @apply bg-black text-white;
+      }
+    }
+    .dropdown__body {
+      @apply border border-auxiliary-6/50;
+    }
+  }
+
+  &__trigger {
+    @apply flex gap-4 items-center border-2 border-transparent bg-white text-black rounded transition
+      h-36 pl-20 pr-16 md:h-48 md:pl-24 md:pr-20;
+
+    &:hover {
+      @apply border-black;
+    }
+
+    &:focus {
+      @apply bg-black text-white;
+    }
+
+    svg {
+      @apply mobile:w-16 mobile:h-16;
+    }
+  }
+
+  &__body {
+    @apply absolute bg-white mt-10 rounded min-w-[246px] z-10;
+  }
+}

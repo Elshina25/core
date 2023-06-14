@@ -1,0 +1,16 @@
+.search-item {
+  @apply flex items-center py-18 px-20 w-full cursor-pointer hover:text-green;
+
+  &:hover &__icon {
+    @apply stroke-green;
+  }
+
+  &__icon {
+    @apply mr-12 w-24 min-w-[24px];
+
+    /* TODO Vlad: убрать после дбавления иконки для объектов */
+    &--object {
+      @apply opacity-0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.filter-element {
+  @apply max-w-[530px] mobile:max-w-none flex items-start mobile:pb-18
+    mobile:px-18 md:pr-20 md:items-center flex-col md:flex-row;
+
+  &__input {
+    @apply w-full mobile:pt-[17px] mobile:pb-[15px] mobile:border-b mobile:border-auxiliary-6/50
+      mobile:border-solid flex-1 py-18 md:px-20 md:py-[15px] xl:py-[17px] rounded-t md:rounded;
+  }
+}
+
+.search-result {
+  @apply absolute w-full bg-white mt-20 z-30 !p-0 block
+    hover:border-auxiliary-6/50 max-h-[400px] overflow-y-auto;
+}

@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
+    },
+    "types": ["node", "vite/client"]
+  },
+  "include": [
+    "renderer/**/*.ts",
+    "renderer/**/*.d.ts",
+    "renderer/**/*.tsx",
+    "renderer/**/*.vue",
+
+    "server/**/*.ts",
+    "server/**/*.d.ts",
+    "server/**/*.tsx",
+    "server/**/*.vue",
+
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": ["dist", "node_modules", "**/*.stories.ts"],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
+    "include": ["vite.config.ts"]
+  }
+}

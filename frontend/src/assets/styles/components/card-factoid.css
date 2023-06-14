@@ -1,0 +1,34 @@
+.card-factoid {
+  &--about {
+    @apply w-full md:w-max mobile:h-full select-none touch-none bg-white rounded
+   px-14 pt-12 pb-36
+   md:px-28 md:pt-16 md:pb-34
+   2xl:px-30 2xl:pt-20 2xl:pb-46;
+
+    .badge {
+      @apply mb-10 md:mb-22 2xl:mb-30;
+    }
+
+    .title {
+      @apply t-h2 md:t-h1 2xl:t-article text-green mb-2 md:mb-4 2xl:mb-8;
+    }
+
+    .subtitle {
+      @apply t-p3 md:t-p2 text-black;
+    }
+  }
+
+  &--home {
+    @apply w-fit select-none touch-none;
+    @apply mr-16 md:mr-76 2xl:mr-80;
+
+    .title {
+      @apply t-h2 text-white mb-2 md:mb-4;
+    }
+
+    .subtitle {
+      @apply max-w-[205px] 2xl:max-w-[335px];
+      @apply t-p3 2xl:t-p2 text-white;
+    }
+  }
+}

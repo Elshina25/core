@@ -1,0 +1,23 @@
+.badge {
+  @apply t-tag inline-flex items-center py-1 px-6 border-2 rounded-full;
+
+  &-white {
+    @apply text-black bg-white border-white;
+  }
+
+  &-outline-gray {
+    @apply text-auxiliary-5 border-auxiliary-6;
+  }
+
+  &-grey {
+    @apply bg-auxiliary-6/50 text-black border-transparent;
+  }
+
+  &-outline-green {
+    @apply text-green border-green;
+  }
+
+  &-green {
+    @apply text-white bg-green border-green;
+  }
+}

@@ -1,0 +1,26 @@
+.form {
+  @apply bg-cover rounded p-16 pb-0 md:p-26 lg:p-60 lg:pb-26 text-white;
+  @apply flex flex-col md:gap-30 md:grid md:grid-cols-2 lg:grid-cols-[repeat(19,minmax(0,1fr))];
+
+  &--blue {
+    @apply bg-[url(/images/form/form-blue-bg-mobile.png)]
+     md:bg-[url(/images/form/form-blue-bg-tablet.png)] lg:bg-[url(/images/form/form-blue-bg.png)];
+  }
+
+  &--green {
+    @apply bg-[url(/images/form/form-green-bg-mobile.png)]
+     md:bg-[url(/images/form/form-green-bg-tablet.png)] lg:bg-[url(/images/form/form-green-bg.png)];
+  }
+
+  &__text {
+    @apply mobile:mb-26 md:col-span-2 lg:col-span-7  md:w-4/5;
+  }
+
+  &__col {
+    @apply lg:col-span-6;
+
+    div {
+      @apply mb-20 md:mb-24 last:md:mb-0;
+    }
+  }
+}

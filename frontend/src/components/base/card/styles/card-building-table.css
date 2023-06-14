@@ -1,0 +1,38 @@
+.card {
+  @apply flex p-30 bg-white rounded;
+
+  &__gallery {
+    @apply !max-w-[420px] m-0 mr-36;
+
+    :deep() {
+      --img-h: 100px;
+
+      .gallery-active {
+        @apply w-full h-[280px] mb-10 object-cover;
+      }
+
+      .swiper-wrapper {
+        @apply max-h-[var(--img-h)];
+      }
+      .swiper-slide img {
+        @apply w-[133px] h-[var(--img-h)];
+      }
+
+      .swiper-slide {
+        @apply mr-10;
+      }
+    }
+  }
+
+  &-body {
+    @apply flex-1;
+
+    &__group {
+      @apply flex justify-between;
+    }
+
+    &__id {
+      @apply t-tag opacity-60 ml-10;
+    }
+  }
+}

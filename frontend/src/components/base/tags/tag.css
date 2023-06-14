@@ -1,0 +1,52 @@
+.tag {
+  @apply t-h4 inline-block border-2 rounded-full cursor-pointer select-none transition-borders;
+}
+
+/* Типы */
+.tag {
+  &-text {
+    @apply border-transparent;
+
+    span {
+      @apply pb-1 border-b border-dashed border-opacity-50 transition;
+    }
+  }
+
+  &-button {
+    @apply border-auxiliary-6 t-p2;
+  }
+}
+
+/* Размеры */
+.tag {
+  &-big {
+    @apply px-10 py-4;
+    @apply md:px-14 md:py-6;
+    @apply 2xl:px-18 2xl:py-8;
+  }
+
+  &-small {
+    @apply px-10 py-4;
+    @apply md:px-12 md:py-[5px];
+    @apply 2xl:px-14 2xl:py-6;
+  }
+}
+
+/* Состояния */
+.tag {
+  &:hover {
+    @apply text-black border-green;
+
+    span {
+      @apply border-transparent;
+    }
+  }
+
+  &.active {
+    @apply text-green border-green;
+
+    span {
+      @apply border-transparent;
+    }
+  }
+}

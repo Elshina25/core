@@ -1,0 +1,75 @@
+.multiselect {
+  @apply cursor-pointer;
+
+  &:hover,
+  &--active {
+    :deep(.multiselect__tags) {
+      @apply border-white rounded;
+    }
+  }
+
+  &__caret {
+    @apply absolute right-12 -top-2 bottom-0 m-auto transition-all text-white;
+  }
+
+  &--active &__caret {
+    @apply top-6 rotate-180;
+  }
+}
+
+:deep(.multiselect) {
+  &__content-wrapper {
+    @apply min-w-fit border border-solid border-auxiliary-6/50 rounded;
+    top: calc(100% + 12px);
+
+    @screen md {
+      top: calc(100% + 8px);
+    }
+
+    @screen mobile {
+      top: calc(100% + 7px);
+    }
+    &::-webkit-scrollbar {
+      @apply w-6 rounded;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply rounded bg-auxiliary-6;
+    }
+  }
+
+  &__option:hover .checkbox-group__checkmark {
+    @apply border-green;
+  }
+
+  &__option {
+    @apply px-20 py-16;
+
+    &--highlight,
+    &--selected {
+      @apply bg-white text-black font-regular;
+    }
+  }
+
+  &__placeholder {
+    @apply text-white/40;
+  }
+
+  &__placeholder,
+  &__element,
+  &__value {
+    @apply t-p2 py-4 md:py-6;
+  }
+
+  &__value {
+    @apply mobile:max-w-[220px] block overflow-hidden text-ellipsis whitespace-nowrap pr-20;
+  }
+
+  &__tags {
+    @apply h-52 md:h-54 2xl:h-60 w-full bg-transparent
+     px-16 md:px-20 py-12 md:py-10 2xl:py-10
+     t-p2 md:t-p1 2xl:text-20 text-white
+     border-solid border-white focus:border-white
+     focus:ring-0 caret-white
+     outline-none rounded transition;
+  }
+}

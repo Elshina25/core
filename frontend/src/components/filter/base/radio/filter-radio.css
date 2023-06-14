@@ -1,0 +1,19 @@
+.radio-group {
+  @apply relative flex items-center t-p2 cursor-pointer;
+
+  &:hover &__checkmark {
+    @apply border-green;
+  }
+
+  &__checkmark {
+    @apply relative inline-block w-20 h-20 mr-12 border border-solid rounded-full;
+
+    &--checked::before {
+      @apply content-[''] absolute left-0 right-0 top-0 bottom-0 m-auto w-6 h-6 bg-black rounded;
+    }
+  }
+
+  &__radio {
+    @apply hidden;
+  }
+}

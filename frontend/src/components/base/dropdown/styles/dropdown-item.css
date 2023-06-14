@@ -1,0 +1,11 @@
+.dropdown-item {
+  @apply whitespace-nowrap t-p2 text-14 relative flex items-center pl-42 pr-14 py-12 cursor-pointer transition;
+
+  &:hover {
+    @apply text-green;
+  }
+
+  &__icon {
+    @apply absolute left-14;
+  }
+}

@@ -1,0 +1,123 @@
+.modal {
+  @apply w-full;
+
+  &-head {
+    @apply flex sticky top-0 z-20 items-center justify-between bg-white
+      md:p-16 xl:p-30 xl:pb-28 xl:pr-80;
+
+    &--desktop {
+      @apply mobile:hidden;
+    }
+
+    &--mobile {
+      @apply md:hidden py-12 px-16 justify-start;
+    }
+
+    &__btn {
+      @apply md:mr-40;
+
+      &--active {
+        :deep(span) {
+          @apply border-none;
+        }
+      }
+    }
+
+    &__search {
+      @apply max-w-[500px] flex-1;
+
+      :deep(.filter-element) {
+        @apply w-full rounded-[4px];
+
+        input {
+          @apply t-p2 py-16 px-18;
+        }
+      }
+    }
+  }
+
+  &-body {
+    @apply !pt-0 md:p-16 xl:p-30;
+
+    &__underground-icon {
+      @apply absolute left-16 text-red;
+
+      :deep(path) {
+        @apply text-white;
+      }
+    }
+
+    &__group {
+      @apply grid md:gap-30 md:mb-24 xl:mb-30 md:pt-24 xl:pt-30 md:border-t md:border-auxiliary-5/50 grid-flow-row md:grid-flow-col;
+
+      /* Количество столбцов в гриде */
+      --grid-col-count-md: 2;
+      --grid-col-count-lg: 3;
+      --grid-col-count-xl: 3;
+      --grid-col-count-2xl: 4;
+
+      /* переопределяемое поле */
+      --grid-element-count: 220;
+
+      @screen md {
+        grid-template:
+          repeat(
+            calc(var(--grid-element-count) / var(--grid-col-count-md) + 1),
+            1fr
+          )
+          / repeat(var(--grid-col-count-md), minmax(min-content, max-content));
+      }
+
+      @screen lg {
+        grid-template:
+          repeat(
+            calc(var(--grid-element-count) / var(--grid-col-count-lg) + 1),
+            1fr
+          )
+          / repeat(var(--grid-col-count-lg), minmax(294px, 1fr));
+      }
+
+      @screen xl {
+        grid-template:
+          repeat(
+            calc(var(--grid-element-count) / var(--grid-col-count-xl) + 1),
+            1fr
+          )
+          / repeat(var(--grid-col-count-xl), minmax(294px, 1fr));
+      }
+
+      @screen 2xl {
+        grid-template:
+          repeat(
+            calc(var(--grid-element-count) / var(--grid-col-count-2xl) + 1),
+            1fr
+          )
+          / repeat(var(--grid-col-count-2xl), minmax(294px, 1fr));
+      }
+    }
+
+    &__item {
+      @apply md:h-[23px] xl:h-28;
+
+      &--main {
+        @apply font-bold;
+
+        @screen md {
+          grid-area: 1 / 1 / 2 / 3;
+        }
+
+        @screen lg {
+          grid-area: 1 / 1 / 2 / 4;
+        }
+
+        @screen xl {
+          grid-area: 1 / 1 / 2 / 4;
+        }
+
+        @screen 2xl {
+          grid-area: 1 / 1 / 2 / 5;
+        }
+      }
+    }
+  }
+}

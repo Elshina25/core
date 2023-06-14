@@ -1,0 +1,83 @@
+Options -Indexes
+ErrorDocument 404 /404.php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]*/)*index\.(html?|php)(\?[^\ ]*)?\ HTTP/
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{REQUEST_URI} !^/bitrix/admin/
+RewriteRule ^(([^/]*/)*)index\.(html?|php)$  http://back.rentnow.ru/$1?  [R=301,L]
+
+#RewriteCond %{SERVER_PORT} !^443$
+#RewriteRule ^(.*)$ https://back.rentnow.ru/$1 [R=301,L]
+
+AddDefaultCharset utf-8  
+AddCharset utf-8 *  
+<IfModule mod_charset.c>  
+    CharsetSourceEnc utf-8  
+    CharsetDefault utf-8  
+</IfModule>
+
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  php_value display_errors 0
+  php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+
+  RewriteRule ^analytics.txt$ /analytics.php [L]
+
+  RewriteCond %{HTTP_HOST} !^back.rentnow.ru
+  RewriteRule ^(.*)$ https://back.rentnow.ru/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^cbre.back.rentnow.ru
+  RewriteRule ^(.*)$ https://back.rentnow.ru/$1 [R=301,L]
+
+  RewriteCond %{REQUEST_URI} // [NC]
+  RewriteRule .* https://back.rentnow.ru/$0 [R=301,L]
+
+  #RewriteCond %{REQUEST_URI} /estate/(office|regional|retail)/(.*)/page-(\d)+/
+  #RewriteRule ^estate/(office|regional|retail)/(.*)/page-(\d)+/ https://back.rentnow.ru/estate/$1/$2/ [R=301,L]
+
+  # no end slash
+  #RewriteCond %{REQUEST_URI} (/estate/.*[^/.]+)($|\?)
+  #RewriteCond %{REQUEST_URI} !/bitrix/components/bitrix/player/mediaplayer/player
+  #RewriteRule .* %1/ [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_URI} en/services/-1/($|\?)
+  RewriteRule .* en/services/ [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_URI} services/-1/($|\?)
+  RewriteRule .* $1services/ [R=301,L,QSA]
+
+  RewriteRule ^estate/office/rent/mansion/(.*)$ https://back.rentnow.ru/estate/office/rent/osobnyak/$1 [R=301,L]
+  RewriteRule ^en/estate/office/rent/mansion/(.*)$ https://back.rentnow.ru/en/estate/office/rent/osobnyak/$1 [R=301,L]
+  RewriteRule ^estate/office/rent/dmitrovskoye-highway/$ https://back.rentnow.ru/estate/office/ [R=301,L]
+  RewriteRule ^contacts/index/$ https://back.rentnow.ru/contacts/ [R=301,L]
+
+  # 12.11.2019
+  RewriteRule ^estate/office/seleznevskaya_ul_32/$ https://back.rentnow.ru [R=301,L]  
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  #RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  #RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/routing_index.php$
+  RewriteRule ^(.*)$ /bitrix/routing_index.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"
+</IfModule>

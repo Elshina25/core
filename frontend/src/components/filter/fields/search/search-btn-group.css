@@ -1,0 +1,11 @@
+.btn-group {
+  @apply flex items-center mobile:mt-14;
+
+  &__btn {
+    @apply flex items-center mobile:t-p3 xl:t-p3;
+  }
+
+  &__caption {
+    @apply bg-green t-p3 text-white px-[5px] md:px-[7px] pb-1 rounded-full mr-2;
+  }
+}

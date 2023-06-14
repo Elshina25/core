@@ -1,0 +1,5 @@
+.filter-element {
+  input {
+    @apply t-p2 w-full px-20 xl:py-[19px] rounded;
+  }
+}
